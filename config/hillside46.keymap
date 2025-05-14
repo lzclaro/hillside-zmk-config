@@ -33,7 +33,7 @@
         };
 
         cedilha {
-            bindings = <&kp RA(LS(COMMA))>;
+            bindings = <&kp RA(COMMA)>;
             key-positions = <40 27>;
         };
 
@@ -53,7 +53,7 @@
         };
 
         cedilha2 {
-            bindings = <&kp RA(LS(COMMA))>;
+            bindings = <&kp RA(COMMA)>;
             key-positions = <27 43>;
         };
     };
