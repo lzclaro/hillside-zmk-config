@@ -78,7 +78,7 @@
         cao: cao {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(LS(COMMA))>, <&macro_wait_time 1>, <&tilde_a>;
+            bindings = <&kp RA(COMMA)>, <&macro_wait_time 1>, <&tilde_a>;
 
             label = "CAO";
         };
