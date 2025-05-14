@@ -33,7 +33,7 @@
         };
 
         cedilha {
-            bindings = <&kp RA(LT)>;
+            bindings = <&kp RA(LESS_THAN)>;
             key-positions = <40 27>;
         };
 
@@ -73,7 +73,7 @@
         cao: cao {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(LT)>, <&macro_wait_time 1>, <&tilde_a>;
+            bindings = <&kp RA(LESS_THAN)>, <&macro_wait_time 1>, <&tilde_a>;
 
             label = "CAO";
         };
