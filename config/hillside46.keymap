@@ -43,7 +43,7 @@
         };
 
         tilde_o {
-            bindings = <&tilde_a>;
+            bindings = <&tilde_o>;
             key-positions = <43 9>;
         };
 
@@ -55,6 +55,26 @@
         cedilha2 {
             bindings = <&kp RA(COMMA)>;
             key-positions = <27 43>;
+        };
+
+        tilde_a2 {
+            bindings = <&tilde_a>;
+            key-positions = <13 40>;
+        };
+
+        tilde_o2 {
+            bindings = <&tilde_o>;
+            key-positions = <9 40>;
+        };
+
+        cao2 {
+            bindings = <&cao>;
+            key-positions = <26 40>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <43 11>;
         };
     };
 
@@ -97,7 +117,7 @@
  */
 
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E  &kp R         &kp T                                                      &kp Y         &kp U       &kp I      &kp O    &kp P      &kp ENTER
+&kp TAB         &kp Q  &kp W  &kp E  &kp R         &kp T                                                      &kp Y         &kp U       &kp I      &kp O    &kp P      &none
 &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F         &kp G                                                      &kp H         &kp J       &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
 &kp LCTRL       &kp Z  &kp X  &kp C  &kp V         &kp B         &kp ESC                          &kp DELETE  &kp N         &kp M       &kp COMMA  &kp DOT  &kp SLASH  &kp BACKSPACE
                                      &out OUT_TOG  &kp LEFT_ALT  &mo 1    &kp SPACE    &kp SPACE  &mo 2       &kp LEFT_GUI  &bt BT_NXT
@@ -118,10 +138,10 @@
  */
 
             bindings = <
-&trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp POUND        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                                &kp DOLLAR   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &kp MINUS
-&trans  &kp LC(T)       &kp AMPERSAND    &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp I                                                            &kp PERCENT  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp PLUS
-&trans  &none           &kp PIPE         &kp BACKSLASH    &kp UNDERSCORE        &kp AT_SIGN        &trans                          &trans        &none        &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
-                                                          &kp K_MUTE            &trans             &trans  &kp ENTER    &kp SPACE  &kp NUMBER_0  &trans       &kp C_PLAY_PAUSE
+&trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp POUND        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                                    &kp DOLLAR   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &kp MINUS
+&trans  &kp LC(T)       &kp AMPERSAND    &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                                &kp PERCENT  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp PLUS
+&trans  &none           &kp PIPE         &kp BACKSLASH    &kp UNDERSCORE        &kp AT_SIGN            &trans                          &trans        &none        &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
+                                                          &kp K_MUTE            &trans                 &trans  &kp ENTER    &kp SPACE  &kp NUMBER_0  &trans       &kp C_PLAY_PAUSE
             >;
 
             sensor-bindings =
