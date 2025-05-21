@@ -121,6 +121,31 @@
             bindings = <&kp LA(NUMBER_9)>;
             key-positions = <39 16>;
         };
+
+        par {
+            bindings = <&par>;
+            key-positions = <40 16>;
+        };
+
+        brac {
+            bindings = <&brac>;
+            key-positions = <40 4>;
+        };
+
+        braces {
+            bindings = <&brace>;
+            key-positions = <40 1>;
+        };
+
+        ag {
+            bindings = <&ag>;
+            key-positions = <43 18>;
+        };
+
+        circ {
+            bindings = <&circ>;
+            key-positions = <43 33>;
+        };
     };
 
     macros {
@@ -135,7 +160,7 @@
         tilde_o: tilde_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp TILDE>, <&macro_wait_time 1>, <&kp O>;
+            bindings = <&kp TILDE>, <&macro_tap>, <&kp O>;
 
             label = "TILDE_O";
         };
@@ -143,9 +168,52 @@
         cao: cao {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(COMMA)>, <&macro_wait_time 1>, <&tilde_a>;
+            bindings = <&kp RA(COMMA)>, <&macro_tap>, <&tilde_a>;
 
             label = "CAO";
+        };
+
+        circ: circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp CARET>, <&macro_tap>, <&kp E>;
+
+            label = "CIRC";
+        };
+
+        ag: ag {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&macro_tap>, <&kp A>;
+
+            label = "AG";
+        };
+
+        par: par {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_PARENTHESIS>,
+                <&macro_tap>,
+                <&kp RIGHT_PARENTHESIS>;
+
+            label = "PAR";
+        };
+
+        brac: brac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET>, <&macro_tap>, <&kp RIGHT_BRACKET>;
+
+            label = "BRAC";
+        };
+
+        brace: brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE>, <&macro_tap>, <&kp RIGHT_BRACE>;
+
+            label = "BRACE";
         };
     };
 
@@ -206,7 +274,7 @@
             bindings = <
 &kp F1  &kp F2             &kp F3  &kp F4         &kp F5            &kp F6                                                &kp F7     &kp F8          &kp UP_ARROW    &kp F10          &kp F11        &kp F12
 &trans  &mo 3              &none   &kp F9         &none             &kp KP_NUMLOCK                                        &kp GRAVE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_AC_HOME  &kp PAGE_UP
-&trans  &mmv MOVE_X(-200)  &none   &kp RA(COMMA)  &mmv MOVE_X(200)  &none           &trans                    &caps_word  &trans     &kp TILDE       &kp CARET       &mo 3            &kp END        &kp PAGE_DOWN
+&trans  &mmv MOVE_X(-200)  &none   &kp RA(COMMA)  &mmv MOVE_X(200)  &none           &trans                    &caps_word  &trans     &kp CARET       &kp TILDE       &mo 3            &kp END        &kp PAGE_DOWN
                                                   &none             &trans          &trans  &trans    &trans  &trans      &trans     &none
             >;
 
