@@ -146,6 +146,11 @@
             bindings = <&circ>;
             key-positions = <43 33>;
         };
+
+        enter2 {
+            bindings = <&kp ENTER>;
+            key-positions = <40 0>;
+        };
     };
 
     macros {
@@ -195,7 +200,9 @@
             bindings =
                 <&kp LEFT_PARENTHESIS>,
                 <&macro_tap>,
-                <&kp RIGHT_PARENTHESIS>;
+                <&kp RIGHT_PARENTHESIS>,
+                <&macro_tap>,
+                <&kp LEFT>;
 
             label = "PAR";
         };
@@ -203,7 +210,12 @@
         brac: brac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&macro_tap>, <&kp RIGHT_BRACKET>;
+            bindings =
+                <&kp LEFT_BRACKET>,
+                <&macro_tap>,
+                <&kp RIGHT_BRACKET>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>;
 
             label = "BRAC";
         };
@@ -211,7 +223,12 @@
         brace: brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACE>, <&macro_tap>, <&kp RIGHT_BRACE>;
+            bindings =
+                <&kp LEFT_BRACE>,
+                <&macro_tap>,
+                <&kp RIGHT_BRACE>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>;
 
             label = "BRACE";
         };
