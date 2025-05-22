@@ -22,6 +22,6 @@
 };
 
 &right_encoder {
-    steps = <10>;
+    steps = <60>;
     status = "okay";
 };
