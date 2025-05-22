@@ -19,5 +19,6 @@
 
 &left_encoder {
     steps = <20>;
+    triggers-per-rotation = <20>;
     status = "okay";
 };
