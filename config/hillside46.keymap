@@ -242,6 +242,27 @@
 
             label = "BRACE";
         };
+
+        SQL: SQL {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(S) &kp LS(E) &kp LS(L) &kp LS(E) &kp LS(C) &kp LS(T) &kp RET &kp STAR &kp RET &kp LS(F) &kp LS(R) &kp LS(O) &kp LS(M)>;
+            label = "SQL";
+        };
+
+        comment: test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(K) &kp LC(C)>;
+            label = "TEST";
+        };
+
+        uncomment: uncomment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(K) &kp LC(U)>;
+            label = "UNCOMMENT";
+        };
     };
 
     keymap {
@@ -320,10 +341,10 @@
  */
 
             bindings = <
-&none  &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                                    &out OUT_TOG  &none           &none  &none   &none  &tog 1
-&none  &none  &bt BT_PRV    &bt BT_NXT    &none         &none                                           &none         &none           &none  &none   &none  &tog 2
-&none  &none  &none         &none         &none         &none         &none                     &none   &none         &none           &none  &trans  &none  &to 0
-                                          &none         &trans        &trans  &trans    &trans  &trans  &trans        &bt BT_CLR_ALL
+&none  &none  &none  &none  &none       &none                                     &none       &none           &SQL   &none   &none  &tog 1
+&none  &none  &none  &none  &none       &none                                     &uncomment  &comment        &none  &none   &none  &tog 2
+&none  &none  &none  &none  &none       &none   &none                     &none   &none       &none           &none  &trans  &none  &to 0
+                            &bt BT_NXT  &trans  &trans  &trans    &trans  &trans  &trans      &bt BT_CLR_ALL
             >;
         };
 
