@@ -161,6 +161,16 @@
             bindings = <&kp ESCAPE>;
             key-positions = <43 31>;
         };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <40 25>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <40 25>;
+        };
     };
 
     macros {
