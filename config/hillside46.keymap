@@ -164,12 +164,22 @@
 
         del {
             bindings = <&kp DEL>;
-            key-positions = <40 25>;
+            key-positions = <40 39>;
         };
 
         backspace {
             bindings = <&kp BACKSPACE>;
+            key-positions = <40 41>;
+        };
+
+        redo {
+            bindings = <&kp LC(Y)>;
             key-positions = <40 25>;
+        };
+
+        undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <40 24>;
         };
     };
 
