@@ -189,42 +189,42 @@
 
         a_top {
             bindings = <&a_top>;
-            key-positions = <0 39>;
+            key-positions = <0 39 3>;
         };
 
         a_bottom {
             bindings = <&a_bottom>;
-            key-positions = <39 12>;
+            key-positions = <39 12 3>;
         };
 
         a_left {
             bindings = <&a_left>;
-            key-positions = <39 24>;
+            key-positions = <39 24 3>;
         };
 
         a_right {
             bindings = <&a_right>;
-            key-positions = <39 25>;
+            key-positions = <39 25 3>;
         };
 
         a_middle {
             bindings = <&a_middle>;
-            key-positions = <39 24 12>;
+            key-positions = <39 24 12 3>;
         };
 
         a_center {
             bindings = <&a_center>;
-            key-positions = <39 25 13>;
+            key-positions = <39 25 13 3>;
         };
 
         d_hor {
             bindings = <&d_hor>;
-            key-positions = <39 27 24>;
+            key-positions = <39 3 13>;
         };
 
         d_vert {
             bindings = <&d_vert>;
-            key-positions = <39 27 25>;
+            key-positions = <39 3 1>;
         };
     };
 
