@@ -181,6 +181,51 @@
             bindings = <&kp LC(Z)>;
             key-positions = <40 24>;
         };
+
+        p1 {
+            bindings = <&p1>;
+            key-positions = <40 3 0 12 24>;
+        };
+
+        a_top {
+            bindings = <&a_top>;
+            key-positions = <0 39>;
+        };
+
+        a_bottom {
+            bindings = <&a_bottom>;
+            key-positions = <39 12>;
+        };
+
+        a_left {
+            bindings = <&a_left>;
+            key-positions = <39 24>;
+        };
+
+        a_right {
+            bindings = <&a_right>;
+            key-positions = <39 25>;
+        };
+
+        a_middle {
+            bindings = <&a_middle>;
+            key-positions = <39 24 12>;
+        };
+
+        a_center {
+            bindings = <&a_center>;
+            key-positions = <39 25 13>;
+        };
+
+        d_hor {
+            bindings = <&d_hor>;
+            key-positions = <39 27 24>;
+        };
+
+        d_vert {
+            bindings = <&d_vert>;
+            key-positions = <39 27 25>;
+        };
     };
 
     macros {
@@ -283,6 +328,69 @@
             bindings = <&kp LC(K) &kp LC(U)>;
             label = "UNCOMMENT";
         };
+
+        p1: p1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N2 &kp N9 &kp N0 &kp N9 &kp N6 &kp N7>;
+            label = "P1";
+        };
+
+        a_top: a_top {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp T>;
+            label = "A_TOP";
+        };
+
+        a_bottom: a_bottom {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp B>;
+            label = "A_BOTTOM";
+        };
+
+        a_left: a_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp L>;
+            label = "A_LEFT";
+        };
+
+        a_right: a_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp R>;
+            label = "A_RIGHT";
+        };
+
+        a_middle: a_middle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp M>;
+            label = "A_MIDDLE";
+        };
+
+        a_center: a_center {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp C>;
+            label = "A_CENTER";
+        };
+
+        d_vert: d_vert {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp V>;
+            label = "D_VERT";
+        };
+
+        d_hor: d_hor {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2) &kp A &kp H>;
+            label = "D_HOR";
+        };
     };
 
     keymap {
@@ -306,7 +414,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp RIGHT LEFT>,
-                <&inc_dec_kp DOWN_ARROW UP_ARROW>;
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer2 {
@@ -319,15 +427,15 @@
  */
 
             bindings = <
-&trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp POUND        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                                    &kp DOLLAR   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &kp MINUS
-&trans  &kp LC(T)       &kp AMPERSAND    &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                                &kp PERCENT  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp PLUS
-&trans  &kp LG(LS(S))   &kp PIPE         &kp BACKSLASH    &kp UNDERSCORE        &kp AT_SIGN            &trans                          &trans        &none        &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
-                                                          &kp K_MUTE            &trans                 &trans  &kp ENTER    &kp SPACE  &kp NUMBER_0  &trans       &kp C_PLAY_PAUSE
+&trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp POUND        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                                       &kp DOLLAR   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &kp MINUS
+&trans  &kp LC(T)       &kp AMPERSAND    &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                                   &kp PERCENT  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp PLUS
+&trans  &kp LG(LS(S))   &kp PIPE         &kp BACKSLASH    &kp UNDERSCORE        &kp AT_SIGN            &kp LC(Z)                          &trans        &none        &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
+                                                          &kp K_MUTE            &trans                 &trans     &kp LC(Y)    &kp SPACE  &kp NUMBER_0  &trans       &kp C_PLAY_PAUSE
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_FAST_FORWARD C_REWIND>,
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+                <&inc_dec_kp DOWN_ARROW UP_ARROW>,
+                <&inc_dec_kp TAB LS(TAB)>;
         };
 
         layer3 {
@@ -340,7 +448,7 @@
  */
 
             bindings = <
-&trans  &kp F2             &kp F3  &kp F4         &kp F5            &kp F6                                              &kp F7     &kp F8          &kp UP_ARROW    &kp F10          &kp F11        &none
+&trans  &kp F2             &kp F3  &kp F4         &kp F5            &kp F6                                              &kp F7     &kp F8          &kp UP_ARROW    &kp F10          &kp F11        &kp ENTER
 &trans  &kp F1             &none   &kp F9         &kp F12           &none                                               &kp GRAVE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_AC_HOME  &kp PAGE_UP
 &trans  &mmv MOVE_X(-200)  &none   &kp RA(COMMA)  &mmv MOVE_X(200)  &none   &kp KP_NUMLOCK                    &kp CAPS  &trans     &kp CARET       &kp TILDE       &mo 3            &kp END        &kp PAGE_DOWN
                                                   &none             &trans  &trans          &trans    &trans  &trans    &trans     &none
