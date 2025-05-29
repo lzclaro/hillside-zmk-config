@@ -194,32 +194,32 @@
 
         a_bottom {
             bindings = <&a_bottom>;
-            key-positions = <39 12 3>;
+            key-positions = <39 3 24>;
         };
 
         a_left {
             bindings = <&a_left>;
-            key-positions = <39 24 3>;
+            key-positions = <39 24 3 12>;
         };
 
         a_right {
             bindings = <&a_right>;
-            key-positions = <39 25 3>;
+            key-positions = <39 25 3 13>;
         };
 
         a_middle {
             bindings = <&a_middle>;
-            key-positions = <39 24 12 3>;
+            key-positions = <39 3 13>;
         };
 
         a_center {
             bindings = <&a_center>;
-            key-positions = <39 25 13 3>;
+            key-positions = <39 3 12>;
         };
 
         d_hor {
             bindings = <&d_hor>;
-            key-positions = <39 3 13>;
+            key-positions = <39 3 25>;
         };
 
         d_vert {
@@ -393,6 +393,17 @@
         };
     };
 
+    behaviors {
+        tap_ex_top: tap_ex_top {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_EX_TOP";
+            #binding-cells = <0>;
+            bindings = <&kp EXCLAMATION>, <&a_top>;
+
+            tapping-term-ms = <120>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -427,9 +438,9 @@
  */
 
             bindings = <
-&trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp POUND        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                                       &kp DOLLAR   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &kp MINUS
+&trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp F2           &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                                       &kp DOLLAR   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &kp MINUS
 &trans  &kp LC(T)       &kp AMPERSAND    &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                                   &kp PERCENT  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp PLUS
-&trans  &kp LG(LS(S))   &kp PIPE         &kp BACKSLASH    &kp UNDERSCORE        &kp AT_SIGN            &kp LC(Z)                          &trans        &none        &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
+&trans  &kp LG(LS(S))   &kp PIPE         &kp BACKSLASH    &kp UNDERSCORE        &kp AT_SIGN            &kp LC(Z)                          &trans        &kp HASH     &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
                                                           &kp K_MUTE            &trans                 &trans     &kp LC(Y)    &kp SPACE  &kp NUMBER_0  &trans       &kp C_PLAY_PAUSE
             >;
 
