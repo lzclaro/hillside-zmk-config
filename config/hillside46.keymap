@@ -107,7 +107,7 @@
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <40 30>;
+            key-positions = <39 29>;
         };
 
         esc2 {
