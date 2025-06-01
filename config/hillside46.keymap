@@ -124,6 +124,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <40 41>;
         };
+
+        p1 {
+            bindings = <&p1>;
+            key-positions = <0 12 24 1 13 25 40>;
+        };
     };
 
     macros {
