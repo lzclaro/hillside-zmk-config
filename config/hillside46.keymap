@@ -112,7 +112,7 @@
 
         esc2 {
             bindings = <&kp ESCAPE>;
-            key-positions = <43 31>;
+            key-positions = <44 32>;
         };
 
         del {
@@ -127,7 +127,12 @@
 
         p1 {
             bindings = <&p1>;
-            key-positions = <0 12 24 1 13 25 40>;
+            key-positions = <30 41 40 39>;
+        };
+
+        p2 {
+            bindings = <&p2>;
+            key-positions = <0 12 24 41 40>;
         };
     };
 
@@ -293,6 +298,13 @@
             #binding-cells = <0>;
             bindings = <&kp LA(NUMBER_2) &kp A &kp H>;
             label = "D_HOR";
+        };
+
+        p2: p2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp UNDER &kp LS(P) &kp C &kp X &kp G &kp H &kp LS(S) &kp N1 &kp N2 &kp N8 &kp N0>;
+            label = "P2";
         };
     };
 
