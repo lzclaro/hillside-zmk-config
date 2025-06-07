@@ -323,7 +323,7 @@
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E  &kp R         &kp T                                                    &kp Y         &kp U         &kp I      &kp O    &kp P      &none
 &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F         &kp G                                                    &kp H         &kp J         &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
-&kp LCTRL       &kp Z  &kp X  &kp C  &kp V         &kp B         &none                          &kp DELETE  &kp N         &kp M         &kp COMMA  &kp DOT  &kp SLASH  &kp BACKSPACE
+&kp LCTRL       &kp Z  &kp X  &kp C  &kp V         &kp B         &none                          &kp ESCAPE  &kp N         &kp M         &kp COMMA  &kp DOT  &kp SLASH  &kp BACKSPACE
                                      &out OUT_BLE  &kp LEFT_ALT  &mo 1  &kp SPACE    &kp SPACE  &mo 2       &kp LEFT_GUI  &out OUT_USB
             >;
 
@@ -350,7 +350,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp DOWN_ARROW UP_ARROW>,
-                <&inc_dec_kp TAB LS(TAB)>;
+                <&inc_dec_kp LC(TAB) LS(LC(TAB))>;
         };
 
         layer3 {
@@ -363,9 +363,9 @@
  */
 
             bindings = <
-&trans  &none     &kp F2  &kp F4         &kp F5   &none                                               &kp BACKSLASH  &none           &kp UP_ARROW    &none            &none          &kp ENTER
-&trans  &tilde_a  &none   &kp F9         &kp F12  &none                                               &kp GRAVE      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_AC_HOME  &kp PAGE_UP
-&trans  &none     &cao    &kp RA(COMMA)  &none    &none   &kp KP_NUMLOCK                    &kp CAPS  &none          &kp CARET       &kp TILDE       &none            &kp END        &kp PAGE_DOWN
+&trans  &none     &kp F2  &kp F4         &kp F5   &none                                               &kp BACKSLASH  &none           &kp UP_ARROW    &none            &none  &kp ENTER
+&trans  &tilde_a  &none   &kp F9         &kp F12  &none                                               &kp GRAVE      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp PAGE_UP
+&trans  &none     &cao    &kp RA(COMMA)  &none    &none   &kp KP_NUMLOCK                    &kp CAPS  &none          &kp CARET       &kp TILDE       &none            &none  &kp PAGE_DOWN
                                          &none    &trans  &trans          &trans    &trans  &trans    &trans         &none
             >;
 
