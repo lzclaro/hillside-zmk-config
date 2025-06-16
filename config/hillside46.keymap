@@ -308,6 +308,85 @@
         };
     };
 
+    behaviors {
+        alt1: alt1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT1";
+            #binding-cells = <0>;
+            bindings = <&kt LA(NUMBER_1)>, <&d_hor>;
+        };
+
+        alt2: alt2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT2";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2)>, <&a_right>;
+        };
+
+        alt3: alt3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT3";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_2)>, <&a_bottom>;
+        };
+
+        alt4: alt4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT4";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_4)>, <&kp LS(F3)>;
+        };
+
+        alt5: alt5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT5";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_5)>, <&kp LC(I)>;
+        };
+
+        alt6: alt6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT6";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_6)>, <&kp LC(LS(E))>;
+        };
+
+        alt7: alt7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT7";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_7)>, <&d_vert>;
+        };
+
+        alt8: alt8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT8";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_8)>, <&a_center>;
+        };
+
+        alt9: alt9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT9";
+            #binding-cells = <0>;
+            bindings = <&kp LA(NUMBER_9)>, <&a_top>;
+        };
+
+        altlarger: altlarger {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALTLARGER";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(PERIOD))>, <&a_middle>;
+        };
+
+        altsmaller: altsmaller {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALTSMALLER";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(COMMA))>, <&a_left>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -344,7 +423,7 @@
             bindings = <
 &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp HASH         &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                                    &kp DOLLAR   &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &kp MINUS
 &trans  &kp LG(LS(S))   &kp AMPERSAND    &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                                &kp PERCENT  &kp NUMBER_4      &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp PLUS
-&trans  &mo 3           &mo 4            &kp F2           &kp UNDERSCORE        &kp AT_SIGN            &mo 5                           &trans        &trans       &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
+&trans  &mo 4           &mo 5            &kp F2           &kp UNDERSCORE        &kp AT_SIGN            &mo 3                           &trans        &trans       &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
                                                           &kp K_MUTE            &trans                 &trans  &kp LC(Y)    &kp SPACE  &kp NUMBER_0  &trans       &kp C_PLAY_PAUSE
             >;
 
@@ -374,6 +453,23 @@
                 <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
+        fn {
+            /* ADJUST
+ * -------------------------------------------------------------------------------------------------------------------------------------
+ * |       | QWERTY| DVORAK| COLEMK|       |       |-----------------------------------|       |  F11  |  F12  |Prt Scr|EP_OFF | EP_ON |
+ * | RESET | BT 0  | BT 1  | BT 2  | BT 3  | BT 4  |-----------------------------------|       |       |       |       |       | RESET |
+ * |       | LGUI  | LALT  | LCTRL | LSHIFT|       |BT CLR |-------------------|       |       |       |OUT_USB|OUT_BLE|       | BOOTL |
+ *                                 |       |       |       |       |---|       |       |       |       |
+ */
+
+            bindings = <
+&trans  &trans  &altlarger   &alt9  &alt8   &alt7                                                     &kp F10          &kp F7  &kp F8  &kp F9  &kp HOME    &kp ENTER
+&trans  &trans  &altsmaller  &alt3  &alt2   &alt1                                                     &kp F11          &kp F4  &kp F5  &kp F6  &kp END     &kp PAGE_UP
+&trans  &trans  &trans       &alt6  &alt5   &alt4   &trans                            &kp UP_ARROW    &kp F12          &kp F1  &kp F2  &kp F3  &kp INSERT  &kp PAGE_DOWN
+                                    &kp F2  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+            >;
+        };
+
         ppt {
             /* NAV   
  * -------------------------------------------------------------------------------------------------------------------------------------
@@ -385,7 +481,7 @@
 
             bindings = <
 &trans  &none   &kp LS(LC(GREATER_THAN))  &kp LA(NUMBER_9)  &kp LA(NUMBER_8)  &kp LA(NUMBER_7)                                    &none       &none           &SQL   &none   &none  &tog 2
-&trans  &trans  &kp LC(LS(LESS_THAN))     &kp LA(NUMBER_3)  &kp LA(NUMBER_2)  &kp LA(NUMBER_1)                                    &uncomment  &comment        &none  &none   &none  &tog 3
+&trans  &trans  &kp LC(LS(LESS_THAN))     &kp LA(NUMBER_3)  &kp LA(NUMBER_2)  &kp LA(NUMBER_1)                                    &uncomment  &comment        &none  &none   &none  &tog 4
 &trans  &trans  &none                     &kp LA(NUMBER_6)  &kp LA(NUMBER_5)  &kp LA(NUMBER_4)  &trans                    &none   &none       &none           &none  &trans  &none  &to 0
                                                             &none             &trans            &trans  &trans    &trans  &trans  &trans      &bt BT_CLR_ALL
             >;
@@ -404,27 +500,10 @@
 &kp INS  &kp EXCL  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT                                        &kp CARET   &kp AMPS      &kp ASTRK     &kp LPAR  &kp RPAR  &kp DEL
 &none    &trans    &kp MINUS  &kp EQUAL  &kp LBKT    &kp RBKT                                           &kp HOME    &kp RSHFT     &kp RCTRL     &kp LALT  &kp RGUI  &kp END
 &trans   &trans    &trans     &kp A      &kp LBRC    &kp RBRC     &sk RALT                   &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &none     &kp RCTRL
-                                         &trans      &trans       &trans    &mo 5    &trans  &trans     &trans      &trans
+                                         &trans      &trans       &trans    &mo 3    &trans  &trans     &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        fn {
-            /* ADJUST
- * -------------------------------------------------------------------------------------------------------------------------------------
- * |       | QWERTY| DVORAK| COLEMK|       |       |-----------------------------------|       |  F11  |  F12  |Prt Scr|EP_OFF | EP_ON |
- * | RESET | BT 0  | BT 1  | BT 2  | BT 3  | BT 4  |-----------------------------------|       |       |       |       |       | RESET |
- * |       | LGUI  | LALT  | LCTRL | LSHIFT|       |BT CLR |-------------------|       |       |       |OUT_USB|OUT_BLE|       | BOOTL |
- *                                 |       |       |       |       |---|       |       |       |       |
- */
-
-            bindings = <
-&trans  &trans  &a_middle  &a_top     &a_center  &d_vert                                                    &kp F10          &kp F7  &kp F8  &kp F9  &kp HOME    &kp ENTER
-&trans  &trans  &a_left    &a_bottom  &a_right   &d_hor                                                     &kp F11          &kp F4  &kp F5  &kp F6  &kp END     &kp PAGE_UP
-&trans  &trans  &trans     &trans     &trans     &none    &trans                            &kp UP_ARROW    &kp F12          &kp F1  &kp F2  &kp F3  &kp INSERT  &kp PAGE_DOWN
-                                      &kp F2     &trans   &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-            >;
         };
     };
 };
