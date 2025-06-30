@@ -321,7 +321,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "D_FIX";
             #binding-cells = <0>;
-            bindings = <&kp D>, <&none>, <&none>, <&kp D>;
+            bindings = <&kp D>, <&kp D>, <&kp D>, <&kp D>;
 
             tapping-term-ms = <65>;
         };
