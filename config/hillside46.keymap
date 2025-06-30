@@ -323,7 +323,7 @@
             #binding-cells = <0>;
             bindings = <&kp D>, <&none>, <&none>, <&kp D>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <65>;
         };
     };
 
